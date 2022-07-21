@@ -9,6 +9,7 @@ import {Post} from "./posts/posts.model";
 import { FilesModule } from './files/files.module';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from 'path';
+import sequelize from "sequelize";
 
 @Module({
     controllers: [],
@@ -38,8 +39,12 @@ import * as path from 'path';
             password: 'd6eadfee7f844e65af54a6bf87fa23d5c64cdef301cea23774602ad0dd1f0c31',
             database: 'd52c22i6in5mk8',
             models: [User, Post],
+            ssl: true,
             autoLoadModels: true
         }),
+        // SequelizeModule.forRoot({
+        //
+        // }),
         UsersModule,
         AuthModule,
         PostsModule,
