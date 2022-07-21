@@ -9,7 +9,6 @@ import {Post} from "./posts/posts.model";
 import { FilesModule } from './files/files.module';
 import {ServeStaticModule} from "@nestjs/serve-static";
 import * as path from 'path';
-import sequelize from "sequelize";
 
 @Module({
     controllers: [],
@@ -25,12 +24,12 @@ import sequelize from "sequelize";
             dialect: 'postgres',
             uri: process.env.DATABASE_URL,
             models: [User, Post],
-            dialectOptions: {
-                ssl: {
-                    require: true,
-                    rejectUnauthorized: false
-                }
-            },
+            // dialectOptions: {
+            //     ssl: {
+            //         require: true,
+            //         rejectUnauthorized: false
+            //     }
+            // },
             autoLoadModels: true
         }),
         UsersModule,
