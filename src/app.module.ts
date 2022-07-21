@@ -31,17 +31,17 @@ import sequelize from "sequelize";
         //     models: [User, Post],
         //     autoLoadModels: true
         // }),
-        SequelizeModule.forRoot({
-            dialect: 'postgres',
-            host: 'ec2-54-87-179-4.compute-1.amazonaws.com',
-            port: 5432,
-            username: 'ibkveczyqtvhng',
-            password: 'd6eadfee7f844e65af54a6bf87fa23d5c64cdef301cea23774602ad0dd1f0c31',
-            database: 'd52c22i6in5mk8',
-            models: [User, Post],
-            ssl: true,
-            autoLoadModels: true
-        }),
+        // SequelizeModule.forRoot({
+        //     dialect: 'postgres',
+        //     host: 'ec2-54-87-179-4.compute-1.amazonaws.com',
+        //     port: 5432,
+        //     username: 'ibkveczyqtvhng',
+        //     password: 'd6eadfee7f844e65af54a6bf87fa23d5c64cdef301cea23774602ad0dd1f0c31',
+        //     database: 'd52c22i6in5mk8',
+        //     models: [User, Post],
+        //     ssl: true,
+        //     autoLoadModels: true
+        // }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
             uri: 'postgres://ibkveczyqtvhng:d6eadfee7f844e65af54a6bf87fa23d5c64cdef301cea23774602ad0dd1f0c31@ec2-54-87-179-4.compute-1.amazonaws.com:5432/d52c22i6in5mk8',
