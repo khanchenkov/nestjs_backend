@@ -21,21 +21,16 @@ import sequelize from "sequelize";
         ConfigModule.forRoot({
             envFilePath: '.env'
         }),
-        // SequelizeModule.forRoot({
-        //     dialect: 'postgres',
-        //     host: process.env.POSTGRES_HOST,
-        //     port: Number(process.env.POSTGRES_PORT),
-        //     username: process.env.POSTGRES_USER,
-        //     password: process.env.POSTGRES_PASSWORD,
-        //     database: process.env.POSTGRES_DB,
-        //     models: [User, Post],
-        //     autoLoadModels: true
-        // }),
         SequelizeModule.forRoot({
             dialect: 'postgres',
             uri: process.env.DATABASE_URL,
             models: [User, Post],
-            ssl: true,
+            dialectOptions: {
+                ssl: {
+                    require: true,
+                    rejectUnauthorized: false
+                }
+            },
             autoLoadModels: true
         }),
         UsersModule,
